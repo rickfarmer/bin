@@ -1,0 +1,89 @@
+# Set PATH, CDPATH, EDITOR, etc.
+
+DEVPATH=/opt/tools;
+export DEVPATH;
+
+# Environment variables and paths
+#export JAVA_VERSION=1.6
+#export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home"
+export JAVA_VERSION=1.7
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home"
+
+export GEMFIRE="${DEVPATH}/pivotal/Pivotal_GemFire_702_b45797"
+export SQLFIRE_HOME="${DEVPATH}/pivotal/Pivotal_SQLFire_112_b45732"
+export ANT_HOME="/usr/share/ant"
+export M2_HOME="/usr/local/Cellar/maven/3.2.1/"
+export JMETER_HOME="${DEVPATH}/jakarta-jmeter"
+export GRADLE_HOME="${DEVPATH}/gradle-1.11"
+export GROOVY_HOME="${DEVPATH}/groovy-2.1.2"
+export RABBITMQ_HOME="${DEVPATH}/rabbitmq_server-2.8.2"
+export ROO_HOME="${DEVPATH}/springsource/spring-roo-1.2.5.RELEASE"
+export JBOSS_HOME="${DEVPATH}/jboss-5.1.0.GA"
+export NEO4J_HOME="${DEVPATH}/neo4j-community-2.0.1"
+export ANDROID_HOME="${DEVPATH}/android-sdks"
+export CORDOVA_IOS_HOME="${DEVPATH}/cordova-3.4.0/cordova-ios/"
+export CORDOVA_ANDROID_HOME="${DEVPATH}/cordova-3.4.0/cordova-android/"
+export CORDOVA_CLI_HOME="${DEVPATH}/cordova-3.4.0/cordova-cli/"
+export CORDOVA_JS_HOME="${DEVPATH}/cordova-3.4.0/cordova-js/"
+export CORDOVA_WP8_HOME="${DEVPATH}/cordova-3.4.0/cordova-wp8/"
+export J2OBJC_HOME="/opt/tools/j2objc"
+export RBENV_ROOT="/usr/local/var/rbenv"
+
+# Google Go Lang Vars
+export GOPATH="/usr/local/bin/go"
+export GOBIN="/usr/local/opt/go/libexec/bin"
+export PATH=$PATH:$GOBIN
+
+export RABBITMQ_NODE_IP_ADDRESS=127.0.0.1
+export ANT_OPTS=-Xmx512M
+export MAVEN_OPTS=-Xmx1024M
+
+export GF_JAVA=$JAVA_HOME/bin/java
+export PATH=$JAVA_HOME/bin:$GEMFIRE/bin:$PATH
+
+#CLASSPATH=$GEMFIRE/lib/gemfire.jar:$GEMFIRE/lib/antlr.jar:$GEMFIRE/lib/gfSecurityImpl.jar:$CLASSPATH;
+#export CLASSPATH;
+export CLASSPATH=$GEMFIRE/lib/gemfire.jar:$GEMFIRE/lib/antlr.jar:\
+$GEMFIRE/lib/gfsh-dependencies.jar:$GEMFIRE/lib/gfSecurityImpl.jar:\
+$GEMFIRE/lib/jackson-core-asl-1.9.9.jar:\
+$GEMFIRE/lib/commons-logging.jar:\
+$GEMFIRE/lib/tomcat-embed-core.jar:\
+$GEMFIRE/lib/tomcat-embed-logging-juli.jar:\
+$GEMFIRE/lib/tomcat-embed-jasper.jar:\
+
+
+PATH=/usr/local/bin:~/bin:$PATH:$JAVA_HOME/bin:$GEMFIRE/bin:$SQLFIRE_HOME/bin:$RABBITMQ_HOME/sbin
+PATH=$PATH:$GRADLE_HOME/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$JBOSS_HOME/bin
+PATH=$PATH:$M2_HOME/bin:$NEO4J_HOME/bin:$CORDOVA_IOS_HOME/bin
+PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/code/tools/android-sdks/build-tools/18.0.1
+PATH=$PATH:$ANDROID_HOME/android-ndk-r9:/code/tools/dex2jar-0.0.9.15:/code/tools/jtool
+PATH=$PATH:$J2OBJC_HOME/dist
+export PATH;
+
+
+export EDITOR="/usr/local/bin/mate -w"
+#export EDITOR="/usr/local/bin/atom -s '~/Dropbox'"
+
+#export spring.profiles.active="dev"
+
+#Homebrew autocomplete
+source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+
+#Load all of the autocompletes you have install via brew bash, git, git-flow, go, etc.
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Ruby env and bundler autocomplete
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Vagrant Environment Vars
+export VAGRANT_VMWARE_CLONE_DIRECTORY="~/Documents/Virtual Machines.localized"
+export VAGRANT_DEFAULT_PROVIDER="vmware_fusion"
+
+#X11 - required for GemFire DataBrowser on OS X
+export DISPLAY=:0
+
