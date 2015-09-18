@@ -9,8 +9,10 @@ export DEVPATH;
 # Environment variables and paths
 #export JAVA_VERSION=1.6
 #export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home"
-export JAVA_VERSION=1.7
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
+#export JAVA_VERSION=1.7
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
+export JAVA_VERSION=1.8
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home"
 
 export GEMFIRE="${DEVPATH}/pivotal/Pivotal_GemFire_702_b45797"
 export SQLFIRE_HOME="${DEVPATH}/pivotal/Pivotal_SQLFire_112_b45732"
