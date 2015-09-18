@@ -1,6 +1,7 @@
 # Command Enhancements
 
 # Utility
+alias h='history | tail -n 20'
 alias reload='source ~/bin/dotfiles/bash/aliases'
 alias ea='mate -w ~/bin/dotfiles/bash/aliases && reload' # Edit aliases
 alias ee="mate ~/bin/dotfiles/bash/env"
@@ -18,8 +19,8 @@ alias la="ls -A -l -G"
 alias c='clear'
 alias cdd='cd -'  # goto last dir cd'ed from
 alias cl='clear; l'
-function cdc() { 
-    cd $1; ls 
+function cdc() {
+    cd $1; ls
 }
 alias cls='clear; ls'
 alias h='history'
@@ -32,15 +33,15 @@ alias lt='ls -lt' # sort with recently modified first
 alias md='mkdir -p'
 alias s='cd ..'   # up one dir
 
-function take() { 
+function take() {
     mkdir -p "$1"
-    cd "$1" 
+    cd "$1"
 }
 
 alias e='exit'
 alias k9="killall -9"
-function killnamed () { 
-    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill 
+function killnamed () {
+    ps ax | grep $1 | cut -d ' ' -f 2 | xargs kill
 }
 function zipr() {
   zip -r $1.zip $1
@@ -50,11 +51,13 @@ function zipr() {
 alias o='open . &'
 alias ff='open -a Firefox'
 
+alias cmdc="history | awk '{a[$2]++}END{for(i in a){print a[i] \" \" i}}'" | sort -rn | head
+
 # General code
 
 # From Chris Wanstrath
-function pless() { 
-    pygmentize $1 | less -r 
+function pless() {
+    pygmentize $1 | less -r
 }
 
 # Processes
@@ -74,7 +77,7 @@ alias gba='git branch -a'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
 # Commit pending changes and quote all args as message
-function gg() { 
+function gg() {
     git commit -v -a -m "$*"
 }
 alias gco='git checkout'
@@ -93,13 +96,13 @@ function gch() {
 }
 
 # Setup a tracking branch from [remote] [branch_name]
-function gbt() { 
-  git branch --track $2 $1/$2 && git checkout $2 
+function gbt() {
+  git branch --track $2 $1/$2 && git checkout $2
 }
 # Quickly clobber a file and checkout
-function grf() { 
+function grf() {
   rm $1
-  git checkout $1 
+  git checkout $1
 }
 # Call from inside an initialized Git repo, with the name of the repo.
 function new-git() {
@@ -129,8 +132,8 @@ alias etr="mate app config lib db schema public spec test vendor/gems vendor/plu
 # Ruby
 alias r="rake"
 
-function markdown() { 
-/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html 
+function markdown() {
+/Applications/TextMate.app/Contents/SharedSupport/Support/bin/Markdown.pl $1 > $1.html
 }
 
 # Rails
@@ -151,20 +154,20 @@ alias aaf='autotest -f' # Don't run all at start
 alias aas="./script/autospec"
 
 # Setup a tunnel
-function haproxyssh() { 
-  ssh -L7997:127.0.0.1:7997 deploy@$1.com 
+function haproxyssh() {
+  ssh -L7997:127.0.0.1:7997 deploy@$1.com
 }
 
 # Syntax check Javascript
-function jsc() { 
-  jsl -conf /etc/jsl/jsl.conf -process $1 
+function jsc() {
+  jsl -conf /etc/jsl/jsl.conf -process $1
 }
 
-function aiff2mp3() { 
-  lame -h -V 0 $1.aif $1.mp3 
+function aiff2mp3() {
+  lame -h -V 0 $1.aif $1.mp3
 }
-function wav2mp3() { 
-  lame -h -V 0 $1.wav $1.mp3 
+function wav2mp3() {
+  lame -h -V 0 $1.wav $1.mp3
 }
 
 
@@ -174,8 +177,8 @@ alias sx="xcodebuild clean && ~/src/checker-0.146/scan-build -k -V xcodebuild"
 # Analyze test build
 alias sxt="xcodebuild -target Test clean && ~/src/checker-0.146/scan-build -k -V xcodebuild -target Test"
 # Call with -target Foo
-function sxx() { 
-  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $* 
+function sxx() {
+  xcodebuild $* clean && ~/src/checker-0.146/scan-build -k -V xcodebuild $*
 }
 
 alias ox="open *.xcodeproj"
@@ -231,4 +234,3 @@ function __rm_single_file(){
         echo "No such file or directory: $file"
     fi
 }
-
