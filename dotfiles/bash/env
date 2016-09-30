@@ -39,6 +39,7 @@ export PATH=$HOME/anaconda/bin:$PATH
 
 # Google Go Lang Vars
 export GOPATH="${HOME}/code/go"
+#export GOROOT="/usr/local/Cellar/go/1.5.1/libexec"
 #export GOBIN="/usr/local/opt/go/libexec/bin"
 #export PATH=$PATH:$GOBIN
 export PATH=$PATH:$GOPATH:$GOPATH/bin
@@ -59,7 +60,6 @@ $GEMFIRE/lib/commons-logging.jar:\
 $GEMFIRE/lib/tomcat-embed-core.jar:\
 $GEMFIRE/lib/tomcat-embed-logging-juli.jar:\
 $GEMFIRE/lib/tomcat-embed-jasper.jar:\
-
 
 PATH=$PATH:$JAVA_HOME/bin:$GEMFIRE/bin:$SQLFIRE_HOME/bin:$RABBITMQ_HOME/sbin
 PATH=$PATH:$GRADLE_HOME/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$JBOSS_HOME/bin

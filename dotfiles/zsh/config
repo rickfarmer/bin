@@ -48,3 +48,4 @@ WORDCHARS=${WORDCHARS//[&=\/;\!#%\{]}
 
 bindkey -e
 
+
